@@ -11,7 +11,7 @@ const Home = () => {
     { href: "#About", label: "About Me" },
     { href: "#Projects", label: "Projects" },
     { href: "#Gears", label: "Gears" },
-    { href: "#Contact", label: "Get In Touch" },
+    { href: "#Contact", label: "Get In Touch"},
   ];
 
   return (
