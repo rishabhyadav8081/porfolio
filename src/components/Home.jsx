@@ -18,7 +18,6 @@ const Home = () => {
     <section className="relative h-screen w-full">
       {/* Background Image */}
       <img className="h-full w-full object-cover" src={alk} alt="Background" />
-
       {/* Overlay Content */}
       <div className="absolute top-0 left-0 w-full h-full bg-black/30">
         {/* Navbar */}
