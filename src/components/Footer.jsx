@@ -15,19 +15,40 @@ const Footer = () => {
       [e.target.name]: e.target.value,
     });
   };
+    const [result, setResult] = React.useState("");
+  
+    const onSubmit = async (event) => {
+      event.preventDefault();
+      setResult("Sending....");
+      const formData = new FormData(event.target);
+  
+      formData.append("access_key", "b7df9567-da80-4ab5-bbfa-5f3405edd3f0");
+  
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+  
+      const data = await response.json();
+  
+      if (data.success) {
+        setResult("Form Submitted Successfully");
+        event.target.reset();
+      } else {
+        console.log("Error", data);
+        setResult(data.message);
+      }
+     
+      console.log("Form submitted:", data.data);
+      setFormData({ 
+        name: "", 
+        email: "", 
+        subject: "", 
+        message: "" 
+      });
+      setResult("")
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // You can connect this to an API or email service later
-    setFormData({ 
-      name: "", 
-      email: "", 
-      subject: "", 
-      message: "" 
-    });
-  };
-
+    };
   return (
     <section id="Contact" className="w-full  bg-gray-50 flex  justify-center p-15">
       <div className="max-w-7xl w-full grid md:grid-cols-2 gap-12 bg-white shadow-md rounded-lg ">
@@ -35,7 +56,8 @@ const Footer = () => {
         {/* Left Side - Info */}
         <div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            I love to collaborate and make awesome content. Let’s talk!
+          Great stories deserve great edits. Let’s bring
+          yours to life — together.
           </h2>
           <hr className="w-12 border-t-2 border-gray-800 mb-6" />
 
@@ -43,17 +65,17 @@ const Footer = () => {
             Get in Touch
           </h3>
           <p className="font-semibold text-gray-800">
-            123 Fifth Ave, New York, NY 12004. <br />
-            +1 123 456 78 90
+          Krishna Lok Nagar, Faizullaganj, Lucknow <br />
+          +91 7307670369
           </p>
 
           <p className="mt-4 font-bold underline">
-            <a href="mailto:mail@example.com">mail@example.com</a>
+            <a href="mailto:mail@example.com">aloky3143@example.com</a>
           </p>
 
           {/* Social Links */}
-          <div className="mt-8 flex space-x-6 text-xl text-gray-700">
-            <a href="#" className="hover:text-red-600">
+          {/* <div className="mt-8 flex space-x-6 text-xl text-gray-700">
+            <a href="https://youtu.be/uMIutF1dw1w?si=luCUNmU1sGEnmxGw" className="hover:text-red-600">
               <i className="fab fa-youtube"></i>
             </a>
             <a href="#" className="hover:text-pink-600">
@@ -65,7 +87,7 @@ const Footer = () => {
             <a href="#" className="hover:text-blue-700">
               <i className="fab fa-facebook"></i>
             </a>
-          </div>
+          </div> */}
         </div>
 
         {/* Right Side - Form */}
@@ -73,7 +95,7 @@ const Footer = () => {
           <h3 className="uppercase text-sm tracking-widest text-gray-500 mb-6">
             Send Me a Message
           </h3>
-          <form onSubmit={handleSubmit} className="space-y-4 p-5">
+          <form onSubmit={onSubmit} className="space-y-4 p-5">
             <input
               type="text"
               name="name"
@@ -116,6 +138,7 @@ const Footer = () => {
               Send Message
             </button>
           </form>
+          <span className="ml-5">{result}</span>
         </div>
       </div>
     </section>

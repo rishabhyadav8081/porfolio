@@ -22,10 +22,23 @@ const videos = [
   },
   {
     id: 4,
-    title: "Behind The Scenes",
-    thumbnail: "https://img.youtube.com/vi/2Vv-BfVoq4g/maxresdefault.jpg",
-    url: "https://www.youtube.com/watch?v=2Vv-BfVoq4g",
+    title: "Cinematography Shots",
+    thumbnail: "https://img.youtube.com/vi/aqz-KE-bpKQ/maxresdefault.jpg",
+    url: "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
   },
+  {
+    id: 5,
+    title: "Viverra turpis pretium",
+    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg", // preview image
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  },
+  {
+    id: 6,
+    title: "Viverra turpis pretium",
+    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg", // preview image
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  },
+  
 ];
 
 const Projects = () => {
@@ -34,7 +47,7 @@ const Projects = () => {
     <h2 className="text-white text-3xl md:text-4xl font-bold mb-10">
         My Projects
       </h2>
-      <div className="max-w-3xl w-full flex flex-col gap-6">
+      <div className=" w-full grid  sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {videos.map((video) => (
           <div
             key={video.id}

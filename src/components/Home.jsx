@@ -11,7 +11,7 @@ const Home = () => {
     { href: "#About", label: "About Me" },
     { href: "#Projects", label: "Projects" },
     { href: "#Gears", label: "Gears" },
-    { href: "#Contact", label: "Get In Touch"},
+    { href: "#Contact", label: "Get In Touch" },
   ];
 
   return (
@@ -73,12 +73,18 @@ const Home = () => {
           className="flex flex-col md:flex-row justify-between items-start md:items-center px-6 md:px-16 mt-20 md:mt-25 text-white relative z-0"
         >
           {/* Left: Name */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight md:w-1/2 ">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight md:w-1/2  md:pb-150">
             Alok Yadav
           </h1>
 
           {/* Right: Description */}
-          <p className=" md:mt-0 md:w-2/5 text-md pt-50 sm:text-base md:text-lg leading-relaxed md:pt-100 "> Play The Video Professional Video Blogger. Varius suscipit nibh vitae arcu, magna id semper nibh ultricies est nulla pulvinar quisque ultrices lacus, et gravida tincidunt elit dolor eu bibendum non. </p>
+          <p className=" md:mt-0 md:w-2/5 text-md pt-50 sm:text-base md:text-lg leading-relaxed md:pt-50 ">
+            <span className="font-bold text-3xl block ">Professional Video Editor</span> I work with creators, brands, and
+            agencies to transform raw footage into captivating, cinematic
+            stories that connect with audiences, elevate content quality, and
+            bring creative visions to life through expert editing, color
+            grading, and seamless storytelling.
+          </p>
         </div>
       </div>
     </section>

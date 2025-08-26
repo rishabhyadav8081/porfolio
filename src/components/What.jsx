@@ -10,17 +10,19 @@ const What = () => {
 
       {/* Keywords */}
       <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 text-2xl md:text-3xl lg:text-4xl font-bold max-w-4xl mx-auto">
-        <div>Adventure</div>
-        <div>Wild</div>
-        <div>Outdoor</div>
-        <div>Extreme</div>
-        <div>Waterfall</div>
-        <div>Beard</div>
-        <div>Muscle</div>
+        <div>Commercial</div>
+        <div>Music Video</div>
+        <div>YouTube</div>
+        <div>Cinematic</div>
+        <div>Wedding</div>
+        <div> Color Grading</div>
+        <div>Short Films</div>
+        <div>Motion Graphics</div>
       </div>
     </section>
   );
 };
 
 export default What;
-
+    
+  
