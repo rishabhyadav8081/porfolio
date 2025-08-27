@@ -5,7 +5,7 @@ const Footer = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
+    Number: "",
     message: "",
   });
 
@@ -43,7 +43,7 @@ const Footer = () => {
       setFormData({ 
         name: "", 
         email: "", 
-        subject: "", 
+        Number: "", 
         message: "" 
       });
       setResult("")
@@ -116,9 +116,9 @@ const Footer = () => {
             />
             <input
               type="text"
-              name="subject"
-              placeholder="Subject"
-              value={formData.subject}
+              name="Number"
+              placeholder="Number"
+              value={formData.Number}
               onChange={handleChange}
               className="w-full border rounded-md px-4 py-2 focus:ring-2 focus:ring-black outline-none"
             />

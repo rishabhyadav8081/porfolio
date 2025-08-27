@@ -43,7 +43,7 @@ const videos = [
 
 const Projects = () => {
   return (
-    <section id="Projects" className="w-full min-h-screen bg-black flex flex-col items-center justify-center py-10 px-4">
+    <section id="Projects" className="w-full min-h-screen bg-[#000000] flex flex-col items-center justify-center py-10 px-4">
     <h2 className="text-white text-3xl md:text-4xl font-bold mb-10">
         My Projects
       </h2>
