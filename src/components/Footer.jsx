@@ -50,11 +50,11 @@ const Footer = () => {
 
     };
   return (
-    <section id="Contact" className="w-full  bg-gray-50 flex  justify-center p-15">
-      <div className="max-w-7xl w-full grid md:grid-cols-2 gap-12 bg-white shadow-md rounded-lg ">
+    <section id="Contact" className="  bg-gray-50 flex  p-5">
+      <div className="w-full grid md:grid-cols-2 gap-12 bg-white shadow-md rounded-lg ">
         
         {/* Left Side - Info */}
-        <div>
+        <div className="p-5">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Great stories deserve great edits. Let’s bring
           yours to life — together.
@@ -92,7 +92,7 @@ const Footer = () => {
 
         {/* Right Side - Form */}
         <div>
-          <h3 className="uppercase text-sm tracking-widest text-gray-500 mb-6">
+          <h3 className="uppercase text-sm tracking-widest text-gray-500 mb-6 pl-5">
             Send Me a Message
           </h3>
           <form onSubmit={onSubmit} className="space-y-4 p-5">
