@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import alk from "../assets/alk.jpg";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { IoMdClose } from "react-icons/io"; // Close Icon
+import { IoMdClose } from "react-icons/io";
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,25 +16,25 @@ const Home = () => {
 
   return (
     <section className="relative h-screen w-full">
-      {/* Background Image */}
+      {/* Background */}
       <img className="h-full w-full object-cover" src={alk} alt="Background" />
-      {/* Overlay Content */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/30">
-        {/* Navbar */}
-        <nav className="flex items-center p-6 md:p-10 text-white relative z-20">
-          {/* Left: Logo */}
-          <div className="font-bold text-lg cursor-pointer">LOGO</div>
+      <div className="absolute inset-0 bg-black/40">
 
-          {/* Right: Mobile Hamburger */}
-          <div
-            className="md:hidden ml-auto text-4xl cursor-pointer"
-            onClick={() => setMenuOpen(!menuOpen)}
+        {/* Navbar */}
+        <nav className="flex items-center p-6 md:p-10 text-white">
+          <div className="font-bold text-lg">LOGO</div>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden ml-auto text-3xl"
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label="Toggle menu"
           >
             {menuOpen ? <IoMdClose /> : <GiHamburgerMenu />}
-          </div>
+          </button>
 
-          {/* Desktop Links */}
-          <div className="hidden md:flex space-x-6 ml-auto text-lg items-center cursor-pointer">
+          {/* Desktop links */}
+          <div className="hidden md:flex space-x-6 ml-auto text-lg items-center">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -51,15 +51,15 @@ const Home = () => {
           </div>
         </nav>
 
-        {/* Mobile Menu */}
+        {/* Mobile menu */}
         {menuOpen && (
-          <div className="absolute  top-20 left-0 w-full bg-white text-black flex flex-col items-start p-6 space-y-4 z-10 shadow-md md:hidden">
+          <div className="absolute top-[68px] left-0 w-full bg-white text-black flex flex-col items-start p-6 space-y-4 z-20 shadow-md md:hidden">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 className="text-lg font-medium w-full border-b pb-2"
-                onClick={() => setMenuOpen(false)} // close menu when link clicked
+                onClick={() => setMenuOpen(false)}
               >
                 {item.label}
               </a>
@@ -67,23 +67,51 @@ const Home = () => {
           </div>
         )}
 
-        {/* Hero Section */}
+        {/* HERO */}
+        {/* Reserve space below navbar so content doesn't collide with it */}
         <div
           id="Home"
-          className="flex flex-col md:flex-row justify-between items-start md:items-center px-6 md:px-16 mt-20 md:mt-25 text-white relative z-0"
+          className="
+            relative z-10
+            h-[calc(100vh-88px)]   /* tweak this if your nav height differs */
+            px-6 
+            md:flex  md:justify-between
+            text-white
+          "
         >
-          {/* Left: Name */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight md:w-1/2  md:pb-150">
-            Alok Yadav
+          {/* Name: top-left on mobile, left column on desktop */}
+          <h1
+            className="
+              mt-15 md:mt-0
+              text-5xl sm:text-6xl md:text-7xl lg:text-8xl
+              font-extrabold leading-tight
+              md:w-1/2
+              w-max
+             
+            "
+          >
+            <span className="block">Alok</span>
+            <span className="block">Yadav</span>
           </h1>
 
-          {/* Right: Description */}
-          <p className=" md:mt-0 md:w-2/5 text-md pt-50 sm:text-base md:text-lg leading-relaxed md:pt-50 ">
-            <span className="font-bold text-3xl block ">Professional Video Editor</span> I work with creators, brands, and
-            agencies to transform raw footage into captivating, cinematic
-            stories that connect with audiences, elevate content quality, and
-            bring creative visions to life through expert editing, color
-            grading, and seamless storytelling.
+          {/* Description: bottom-right on mobile, right column on desktop */}
+          <p
+            className="mb-10
+              absolute bottom-6 right-6
+              md:static md:ml-10 md:w-2/5 md:max-w-none
+              text-sm sm:text-base md:text-lg leading-relaxed
+              max-w-[18rem] sm:max-w-sm
+             px-4 py-3 md:mt-60 lg:mt-90
+            "
+          >
+            <span className="font-bold text-xl sm:text-2xl md:text-3xl block">
+              Professional Video Editor
+            </span>
+            I work with creators, brands, and agencies to transform raw
+            footage into captivating, cinematic stories that connect with
+            audiences, elevate content quality, and bring creative visions to
+            life through expert editing, color grading, and seamless
+            storytelling.
           </p>
         </div>
       </div>
